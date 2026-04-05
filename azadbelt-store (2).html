@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azadbelt Store — Premium Wholesale Accessories</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g:#1D9E75;--gd:#0F6E56;--gl:#E1F5EE;--gm:#9FE1CB;
+  --amber:#EF9F27;--al:#FAEEDA;
+  --coral:#D85A30;--cl:#FAECE7;
+  --purple:#7F77DD;--pl:#EEEDFE;
+  --pink:#D4537E;--pkl:#FBEAF0;
+  --blue:#378ADD;--bl:#E6F1FB;
+  --ink:#1a1a18;--inkm:#3a3a36;--inks:#6b6b65;
+  --paper:#faf9f6;--paperm:#f0ede6;--white:#fff;
+  --border:rgba(0,0,0,0.08);
+  --wa:#25D366;--wad:#128C7E;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,249,246,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);text-decoration:none}
+.logo span{color:var(--g)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--inks);font-size:14px;transition:color .2s}
+.nav-links a:hover{color:var(--gd)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-wa{background:var(--wa);color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:6px;transition:background .2s}
+.nav-wa:hover{background:var(--wad)}
+.nav-wa svg{width:16px;height:16px}
+.nav-order{background:var(--g);color:#fff;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s}
+.nav-order:hover{background:var(--gd)}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-bubble{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:12px 16px;font-size:13px;box-shadow:0 4px 24px rgba(0,0,0,0.12);max-width:220px;text-align:right;display:none;animation:popIn .3s ease}
+.wa-bubble p{color:var(--ink);line-height:1.5;margin-bottom:8px}
+.wa-bubble a{display:block;background:var(--wa);color:#fff;text-decoration:none;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:500;text-align:center}
+.wa-main{width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .2s}
+.wa-main:hover{transform:scale(1.08)}
+.wa-main svg{width:28px;height:28px}
+.wa-float.open .wa-bubble{display:block}
+@keyframes popIn{from{opacity:0;transform:scale(.9) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+/* HERO */
+.hero{min-height:100vh;padding:100px 5% 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(29,158,117,.12),transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(239,159,39,.08),transparent 70%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--gl);color:var(--gd);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:22px;animation:fadeUp .6s ease both}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--g)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,62px);font-weight:700;line-height:1.1;margin-bottom:18px;animation:fadeUp .7s ease .1s both}
+.hero h1 em{color:var(--g);font-style:normal}
+.hero-sub{font-size:16px;color:var(--inks);line-height:1.75;margin-bottom:32px;max-width:480px;animation:fadeUp .7s ease .2s both}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;animation:fadeUp .7s ease .3s both}
+.btn-primary{background:var(--g);color:#fff;padding:13px 26px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:7px}
+.btn-primary:hover{background:var(--gd);transform:translateY(-1px)}
+.btn-wa{background:var(--wa);color:#fff;padding:13px 22px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:background .2s,transform .15s}
+.btn-wa:hover{background:var(--wad);transform:translateY(-1px)}
+.btn-wa svg,.btn-primary svg{width:16px;height:16px}
+.btn-outline{background:transparent;color:var(--ink);padding:13px 22px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid var(--border);cursor:pointer;transition:.2s}
+.btn-outline:hover{border-color:var(--g);background:var(--gl)}
+.hero-stats{display:flex;gap:28px;padding-top:28px;border-top:1px solid var(--border);animation:fadeUp .7s ease .4s both;flex-wrap:wrap}
+.stat-item h3{font-family:'Playfair Display',serif;font-size:26px;color:var(--gd);font-weight:700}
+.stat-item p{font-size:12px;color:var(--inks)}
+
+/* hero visual */
+.hero-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px;animation:fadeIn .8s ease .3s both}
+.hcard{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px;transition:transform .2s,box-shadow .2s;cursor:default}
+.hcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.hcard.tall{grid-row:span 2}
+.hcard.accent{background:var(--g)}
+.hcard .ci{width:40px;height:40px;border-radius:10px;background:var(--gl);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px}
+.hcard.accent .ci{background:rgba(255,255,255,.18)}
+.hcard h4{font-size:14px;font-weight:500;margin-bottom:3px}
+.hcard.accent h4{color:#fff}
+.hcard p{font-size:12px;color:var(--inks)}
+.hcard.accent p{color:rgba(255,255,255,.7)}
+.hcard .pill{display:inline-block;margin-top:8px;background:var(--gl);color:var(--gd);font-size:11px;padding:3px 10px;border-radius:20px}
+.hcard.accent .pill{background:rgba(255,255,255,.2);color:#fff}
+
+/* SECTIONS */
+section{padding:80px 5%}
+.sec-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--gd);margin-bottom:12px}
+.sec-tag::before{content:'';width:18px;height:2px;background:var(--g);border-radius:2px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;line-height:1.15;margin-bottom:12px;color:var(--ink)}
+.sec-sub{font-size:15px;color:var(--inks);max-width:520px;line-height:1.7}
+
+/* PRODUCTS */
+.products-bg{background:var(--paperm)}
+.prod-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.ftab{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:6px 16px;font-size:13px;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif}
+.ftab:hover,.ftab.active{background:var(--g);color:#fff;border-color:var(--g)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.pcard{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.pimg{height:180px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.pcard:hover .pimg img{transform:scale(1.06)}
+.pimg-belt{background:linear-gradient(135deg,#f0ede6,#e8e3d8)}
+.pimg-wallet{background:linear-gradient(135deg,#E1F5EE,#c5ead9)}
+.pimg-baby{background:linear-gradient(135deg,#FAEEDA,#f5d99a)}
+.pimg-trolley{background:linear-gradient(135deg,#FAECE7,#f5c4b3)}
+.pimg-sunglass{background:linear-gradient(135deg,#E6F1FB,#b5d4f4)}
+.pimg-jewel{background:linear-gradient(135deg,#FBEAF0,#f4c0d1)}
+.pimg-scarf{background:linear-gradient(135deg,#EEEDFE,#CECBF6)}
+.pimg-hair{background:linear-gradient(135deg,#EAF3DE,#C0DD97)}
+.pimg-handbag{background:linear-gradient(135deg,#FAEEDA,#FAC775)}
+.pimg-backpack{background:linear-gradient(135deg,#E1F5EE,#5DCAA5)}
+.pimg-capbag{background:linear-gradient(135deg,#FCEBEB,#F7C1C1)}
+.pimg-clutch{background:linear-gradient(135deg,#EEEDFE,#AFA9EC)}
+.pbody{padding:16px}
+.pbody h3{font-size:15px;font-weight:500;margin-bottom:4px}
+.pbody p{font-size:12px;color:var(--inks);margin-bottom:12px;line-height:1.5}
+.pfoot{display:flex;align-items:center;justify-content:space-between}
+.pbadge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px}
+.pb-green{background:var(--gl);color:var(--gd)}
+.pb-amber{background:var(--al);color:#854F0B}
+.pb-blue{background:var(--bl);color:#185FA5}
+.pb-purple{background:var(--pl);color:#3C3489}
+.pb-pink{background:var(--pkl);color:#72243E}
+.pb-coral{background:var(--cl);color:#712B13}
+.parrow{width:30px;height:30px;border-radius:8px;background:var(--g);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;text-decoration:none}
+.parrow:hover{background:var(--gd)}
+.parrow svg{width:13px;height:13px;stroke:#fff}
+
+/* DESIGNS SHOWCASE */
+.designs-section{}
+.designs-header{text-align:center;margin-bottom:48px}
+.designs-header .sec-sub{margin:0 auto}
+.designs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.dcard{border-radius:14px;overflow:hidden;position:relative;height:180px;display:flex;align-items:flex-end;cursor:pointer;transition:transform .2s}
+.dcard:hover{transform:scale(1.03)}
+.dcard-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:64px}
+.d1{background:linear-gradient(135deg,#1a1a18,#3a3a36)}
+.d2{background:linear-gradient(135deg,#8B4513,#D2691E)}
+.d3{background:linear-gradient(135deg,#1D9E75,#0F6E56)}
+.d4{background:linear-gradient(135deg,#2c3e50,#3498db)}
+.d5{background:linear-gradient(135deg,#8e44ad,#9b59b6)}
+.d6{background:linear-gradient(135deg,#c0392b,#e74c3c)}
+.d7{background:linear-gradient(135deg,#f39c12,#e67e22)}
+.d8{background:linear-gradient(135deg,#16a085,#1abc9c)}
+.dcard-label{position:relative;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));width:100%}
+.dcard-label h4{font-size:13px;font-weight:500;color:#fff;margin-bottom:2px}
+.dcard-label p{font-size:11px;color:rgba(255,255,255,.7)}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-items{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.witem{display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--white);border:1px solid var(--border);border-radius:12px;transition:border-color .2s}
+.witem:hover{border-color:var(--gm)}
+.wicon{width:40px;height:40px;flex-shrink:0;border-radius:10px;background:var(--gl);display:flex;align-items:center;justify-content:center}
+.wicon svg{width:18px;height:18px;stroke:var(--gd)}
+.witem h4{font-size:14px;font-weight:500;margin-bottom:2px}
+.witem p{font-size:12px;color:var(--inks);line-height:1.5}
+.why-visual{background:var(--ink);border-radius:20px;padding:32px;color:#fff;position:relative;overflow:hidden}
+.why-visual::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(29,158,117,.35),transparent 70%)}
+.why-visual h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:20px;position:relative}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;margin-bottom:20px}
+.mbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px}
+.mbox .num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gm)}
+.mbox .lbl{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px}
+.wa-promo{background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px}
+.wa-promo svg{width:24px;height:24px;flex-shrink:0}
+.wa-promo p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
+.wa-promo a{color:var(--gm);font-weight:500;text-decoration:none}
+
+/* CATALOGUE */
+.cat-section{background:var(--paperm)}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.cat-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.cat-btn{display:flex;flex-direction:column;gap:4px;padding:18px;background:var(--white);border:1px solid var(--border);border-radius:12px;text-decoration:none;transition:.2s;cursor:pointer}
+.cat-btn:hover{border-color:var(--wa);background:#f0fff7}
+.cat-btn .cico{font-size:24px;margin-bottom:6px}
+.cat-btn h4{font-size:14px;font-weight:500;color:var(--ink)}
+.cat-btn p{font-size:12px;color:var(--inks)}
+.cat-btn .carr{font-size:18px;color:var(--wa);margin-top:4px}
+.cat-visual{background:var(--g);border-radius:20px;padding:32px;color:#fff;text-align:center}
+.cat-visual h3{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:10px}
+.cat-visual p{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:24px;line-height:1.6}
+.cat-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--gd);padding:13px 24px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;transition:.2s}
+.cat-wa-btn:hover{background:var(--gl)}
+.cat-wa-btn svg{width:18px;height:18px}
+
+/* CTAs */
+.ctas-section{}
+.ctas-header{text-align:center;margin-bottom:40px}
+.cta-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.ctacard{border-radius:14px;padding:22px;border:1px solid transparent;transition:transform .2s}
+.ctacard:hover{transform:translateY(-3px)}
+.ctacard.urgency{background:#FCEBEB;border-color:#F09595}
+.ctacard.trust{background:var(--gl);border-color:var(--gm)}
+.ctacard.offer{background:var(--al);border-color:#EF9F27}
+.ctacard.soft{background:var(--pl);border-color:#AFA9EC}
+.ctalabel{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px}
+.urgency .ctalabel{color:#A32D2D}
+.trust .ctalabel{color:var(--gd)}
+.offer .ctalabel{color:#854F0B}
+.soft .ctalabel{color:#3C3489}
+.ctacard p{font-size:13px;line-height:1.6;color:var(--ink);margin-bottom:14px}
+.cta-wa{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;text-decoration:none;background:var(--wa);color:#fff;padding:7px 14px;border-radius:8px;transition:background .2s}
+.cta-wa:hover{background:var(--wad)}
+.cta-wa svg{width:14px;height:14px}
+
+/* CONTACT */
+.contact-section{background:var(--ink);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-section .sec-tag{color:var(--gm)}
+.contact-section .sec-tag::before{background:var(--gm)}
+.contact-section .sec-title{color:#fff}
+.contact-section .sec-sub{color:rgba(255,255,255,.5)}
+.contact-ways{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.cway{display:flex;gap:12px;align-items:center;padding:13px 15px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;text-decoration:none;transition:border-color .2s}
+.cway:hover{border-color:var(--gm)}
+.cway svg{width:18px;height:18px;stroke:var(--gm);flex-shrink:0}
+.cway-text h4{font-size:13px;font-weight:500;color:#fff;margin-bottom:1px}
+.cway-text p{font-size:12px;color:rgba(255,255,255,.5)}
+.contact-form{display:flex;flex-direction:column;gap:13px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:11px;color:rgba(255,255,255,.45)}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 13px;font-size:14px;color:#fff;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;resize:vertical}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.22)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--g)}
+.fg select option{background:#2a2a28}
+.form-actions{display:flex;gap:10px}
+.fsub{flex:1;background:var(--g);color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;border:none;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:7px}
+.fsub:hover{background:var(--gd);transform:translateY(-1px)}
+.fsub svg{width:15px;height:15px}
+.fwa{background:var(--wa);color:#fff;padding:12px 18px;border-radius:10px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;border:none;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:7px;text-decoration:none}
+.fwa:hover{background:var(--wad)}
+.fwa svg{width:15px;height:15px}
+.form-note{font-size:11px;color:rgba(255,255,255,.3);text-align:center}
+
+/* FOOTER */
+footer{background:#111110;padding:28px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fl{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff}
+.fl span{color:var(--g)}
+.fmid{font-size:13px;color:rgba(255,255,255,.4)}
+.fwa-link{display:flex;align-items:center;gap:6px;color:var(--wa);font-size:13px;text-decoration:none;font-weight:500}
+.fwa-link svg{width:15px;height:15px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:90px}
+  .hero-visual{display:none}
+  .why-grid,.cat-grid,.contact-grid{grid-template-columns:1fr}
+  .why-visual{order:-1}
+}
+@media(max-width:600px){
+  nav .nav-links,.nav-order{display:none}
+  .form-row{grid-template-columns:1fr}
+  .form-actions{flex-direction:column}
+  .cat-options{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Azadbelt <span>Store</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#designs">Designs</a></li>
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#why">Why us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20know%20more%20about%20your%20wholesale%20accessories." class="nav-wa" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="#contact" class="nav-order">Order now</a>
+  </div>
+</nav>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<div class="wa-float" id="waFloat">
+  <div class="wa-bubble">
+    <p>Hi! How can we help you today?</p>
+    <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20place%20a%20bulk%20order." target="_blank">Place a bulk order</a>
+    <br><br>
+    <a href="https://wa.me/917368072529?text=Hi!%20Please%20send%20me%20your%20latest%20catalogue." target="_blank" style="background:#0F6E56;display:block;color:#fff;text-decoration:none;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:500;text-align:center;margin-top:6px">Get catalogue</a>
+    <br>
+    <a href="https://wa.me/917368072529?text=Hi!%20I%20have%20a%20query%20about%20your%20products." target="_blank" style="background:#444441;display:block;color:#fff;text-decoration:none;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:500;text-align:center;margin-top:6px">Ask a query</a>
+  </div>
+  <div class="wa-main" onclick="document.getElementById('waFloat').classList.toggle('open')">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">Trusted wholesale supplier · India</div>
+    <h1>Premium accessories at <em>unbeatable</em> wholesale prices</h1>
+    <p class="hero-sub">We supply retailers, boutiques & online sellers with trending accessories — belts, wallets, sunglasses, baby products, handbags & more. Bulk pricing, fast dispatch, latest styles.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6z"/></svg>
+        Order now
+      </a>
+      <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20place%20a%20bulk%20order." class="btn-wa" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <a href="https://wa.me/917368072529?text=Hi!%20Please%20send%20me%20your%20latest%20catalogue." class="btn-outline" target="_blank">Get catalogue</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><h3>500+</h3><p>Happy sellers</p></div>
+      <div class="stat-item"><h3>30+</h3><p>Product categories</p></div>
+      <div class="stat-item"><h3>48h</h3><p>Avg dispatch</p></div>
+      <div class="stat-item"><h3>Pan-India</h3><p>Delivery</p></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hcard accent tall">
+      <div class="ci" style="background:rgba(255,255,255,.18);overflow:hidden;padding:0"><img src="https://images.unsplash.com/photo-1624222247344-550fb60fe8ff?w=80&q=80" style="width:40px;height:40px;object-fit:cover;border-radius:10px" alt="Belts"></div>
+      <p>Men & women styles, all sizes & materials.</p>
+      <span class="pill">Best seller</span>
+    </div>
+    <div class="hcard">
+      <div class="ci" style="overflow:hidden;padding:0"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=80&q=80" style="width:40px;height:40px;object-fit:cover;border-radius:10px" alt="Wallets"></div>
+      <h4>Wallets & purses</h4>
+      <p>Trendy, fast-moving.</p>
+      <span class="pill">High demand</span>
+    </div>
+    <div class="hcard">
+      <div class="ci" style="overflow:hidden;padding:0"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=80&q=80" style="width:40px;height:40px;object-fit:cover;border-radius:10px" alt="Sunglasses"></div>
+      <h4>Sunglasses</h4>
+      <p>UV protection, stylish frames.</p>
+      <span class="pill">New stock</span>
+    </div>
+    <div class="hcard">
+      <div class="ci" style="overflow:hidden;padding:0"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=80&q=80" style="width:40px;height:40px;object-fit:cover;border-radius:10px" alt="Handbags"></div>
+      <h4>Handbags</h4>
+      <p>Bulk available, all styles.</p>
+      <span class="pill">Bulk available</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-bg" id="products">
+  <div class="prod-header">
+    <div>
+      <div class="sec-tag">Our range</div>
+      <h2 class="sec-title">Products that sell themselves</h2>
+      <p class="sec-sub">30+ categories, hundreds of designs — stocked fresh, shipped fast across India.</p>
+    </div>
+    <a href="https://wa.me/917368072529?text=Hi!%20Please%20send%20me%20your%20latest%20catalogue." class="btn-primary" target="_blank">Request catalogue</a>
+  </div>
+  <div class="filter-tabs">
+    <button class="ftab active" onclick="filterProducts('all',this)">All products</button>
+    <button class="ftab" onclick="filterProducts('accessories',this)">Accessories</button>
+    <button class="ftab" onclick="filterProducts('bags',this)">Bags & luggage</button>
+    <button class="ftab" onclick="filterProducts('baby',this)">Baby</button>
+    <button class="ftab" onclick="filterProducts('fashion',this)">Fashion</button>
+    <button class="ftab" onclick="filterProducts('footwear',this)">Footwear</button>
+    <button class="ftab" onclick="filterProducts('home',this)">Home & kitchen</button>
+    <button class="ftab" onclick="filterProducts('toys',this)">Toys & gifts</button>
+  </div>
+  <div class="products-grid" id="prodGrid">
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg pimg-belt"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80" alt="Belts" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Belts — men & women</h3>
+        <p>Stylish & durable in all sizes, colours & leather-look finishes.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-green">Bulk pricing</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Belts%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg pimg-wallet"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&q=80" alt="Wallets & Purses" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Wallets & ladies purses</h3>
+        <p>Trendy designs updated regularly — moves fast off the shelf.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-amber">Fast moving</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Wallets%20and%20Purses%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg pimg-baby"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80" alt="Baby Caps" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Baby caps & essentials</h3>
+        <p>Soft, safe, trusted by parents. Caps, hats & accessories for little ones.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-blue">Parent trusted</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Products%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg pimg-trolley"><img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=400&q=80" alt="Trolley Bags" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Trolley bags</h3>
+        <p>Durable, travel-ready & in demand year-round. Multiple sizes available.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-green">Year-round demand</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Trolley%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg pimg-sunglass"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&q=80" alt="Sunglasses" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Sunglasses</h3>
+        <p>Stylish UV-protection frames for men & women. Multiple colour variants.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-blue">New stock</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Sunglasses%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg pimg-jewel"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Jewellery" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Jewellery & bangles</h3>
+        <p>Trendy imitation jewellery — earrings, bangles, necklaces & sets.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-pink">High margin</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg pimg-scarf"><img src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=400&q=80" alt="Scarves & Stoles" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Scarves & stoles</h3>
+        <p>All-season scarves in multiple fabrics, prints & colours. Sells fast in retail.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-purple">All season</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Scarves%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg pimg-hair"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80" alt="Hair Accessories" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Hair accessories</h3>
+        <p>Clips, bands, scrunchies & pins — popular with boutiques & salons.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-green">Salon favourite</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Hair%20Accessories%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg pimg-handbag"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80" alt="Handbags" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Handbags</h3>
+        <p>Stylish tote, sling & shoulder bags. Multiple designs for every budget.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-amber">Bestseller</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Handbags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg pimg-backpack"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80" alt="Backpacks" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Backpacks</h3>
+        <p>School, college & travel backpacks — durable & trendy designs.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-blue">School season</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Backpacks%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg pimg-capbag"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80" alt="Baby Bags" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Baby bags & diaper bags</h3>
+        <p>Spacious, stylish & functional bags for new parents. High retail demand.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-coral">High demand</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg pimg-clutch"><img src="https://images.unsplash.com/photo-1614179818511-5851a25a4862?w=400&q=80" alt="Clutches & Potlis" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Clutches & potlis</h3>
+        <p>Party & ethnic clutches — perfect for festive season stock-up.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-purple">Festive pick</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Clutches%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- NEW PRODUCTS -->
+
+    <div class="pcard" data-cat="footwear">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5e6d3,#e8c9a0)"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Flip Flops & Slippers" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Flip flops & slippers</h3>
+        <p>Casual & stylish footwear for men, women & kids. High-volume seller.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-amber">High volume</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Flip%20Flops%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="footwear">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8d5c4,#c9a882)"><img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400&q=80" alt="Ladies Sandals" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Ladies sandals & heels</h3>
+        <p>Trendy block heels, flats & ethnic sandals. Moves fast in boutiques.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-pink">Boutique pick</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Ladies%20Sandals%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="home">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f4ea,#b5d9bb)"><img src="https://images.unsplash.com/photo-1584813470613-5b1c1cad3d69?w=400&q=80" alt="Kitchen Storage" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Kitchen storage & containers</h3>
+        <p>Stackable boxes, jars & organisers — everyday essentials that sell fast.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-green">Everyday seller</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Kitchen%20Storage%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="home">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef3e2,#fdd98a)"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&q=80" alt="Water Bottles" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Water bottles & flasks</h3>
+        <p>Steel & plastic bottles — school, office & gym. Year-round demand.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-blue">Year-round</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Water%20Bottles%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="toys">
+      <div class="pimg" style="background:linear-gradient(135deg,#fce8f3,#f9b8de)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Soft Toys" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Soft toys & stuffed animals</h3>
+        <p>Cuddly plush toys — gifting & kids segment. Great festive demand.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-pink">Gift season</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Soft%20Toys%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="toys">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f0fe,#a8c4f0)"><img src="https://images.unsplash.com/photo-1530462943125-677cc511c87e?w=400&q=80" alt="Stationery & Gifts" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Stationery & gift sets</h3>
+        <p>Pens, notebooks, gift combos — perfect for corporate & retail gifting.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-purple">Corporate gift</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Stationery%20Gift%20Sets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5eef8,#d7b8f0)"><img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=400&q=80" alt="Watches" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Fashion watches</h3>
+        <p>Trendy analog & digital watches for men & women. High-margin category.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-purple">High margin</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Fashion%20Watches%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#e6f9f3,#9fd8c3)"><img src="https://images.unsplash.com/photo-1586495777744-4e6232e8b71b?w=400&q=80" alt="Caps & Hats" loading="lazy"></div>
+      <div class="pbody">
+        <h3>Caps & hats</h3>
+        <p>Sports caps, bucket hats & snapbacks — trending styles for all ages.</p>
+        <div class="pfoot">
+          <span class="pbadge pb-green">Trending</span>
+          <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Caps%20and%20Hats%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===== 20 MORE ACCESSORIES ===== -->
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#f0e6f5,#d4a8e8)"><img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&q=80" alt="Keychains" loading="lazy"></div>
+      <div class="pbody"><h3>Keychains & lanyards</h3><p>Metal, leather & fancy keychains — gifting bestseller all year.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Gift pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Keychains%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f4f8,#a8d4e8)"><img src="https://images.unsplash.com/photo-1614249788307-d86dc33a1498?w=400&q=80" alt="Gloves" loading="lazy"></div>
+      <div class="pbody"><h3>Gloves & hand warmers</h3><p>Winter woollen & leather gloves — seasonal must-stock for cold regions.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Winter stock</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Gloves%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef0e0,#fad4a0)"><img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&q=80" alt="Socks" loading="lazy"></div>
+      <div class="pbody"><h3>Socks — men, women & kids</h3><p>Cotton, ankle & designer socks. Low cost, high volume, fast moving.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Fast moving</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Socks%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5f0e8,#e0d0b0)"><img src="https://images.unsplash.com/photo-1553456558-aff63285bdd1?w=400&q=80" alt="Umbrellas" loading="lazy"></div>
+      <div class="pbody"><h3>Umbrellas & rain accessories</h3><p>Foldable & straight umbrellas — rainy season volume seller.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Seasonal</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Umbrellas%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#fbe8e8,#f5b8b8)"><img src="https://images.unsplash.com/photo-1598522325074-042db73aa4e6?w=400&q=80" alt="Ties & Bow Ties" loading="lazy"></div>
+      <div class="pbody"><h3>Ties & bow ties</h3><p>Silk-finish, printed & plain ties for men — office & wedding wear.</p>
+        <div class="pfoot"><span class="pbadge pb-coral">Office wear</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Ties%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8eef8,#b0c4e8)"><img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=400&q=80" alt="Phone Cases" loading="lazy"></div>
+      <div class="pbody"><h3>Mobile phone cases</h3><p>Designer & plain covers for top phone models. High demand online.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Online seller</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Phone%20Cases%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#f0f8e8,#c8e8a0)"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Fitness Band" loading="lazy"></div>
+      <div class="pbody"><h3>Fitness bands & wristbands</h3><p>Sports & fashion wristbands — gym & casual use, very fast selling.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Gym pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Wristbands%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef8e0,#fce890)"><img src="https://images.unsplash.com/photo-1602810316693-3667c854239a?w=400&q=80" alt="Pocket Square" loading="lazy"></div>
+      <div class="pbody"><h3>Pocket squares & handkerchiefs</h3><p>Men's formal accessories — suits every retail & wedding store.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Wedding season</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Pocket%20Squares%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8e8f5,#e0a8d8)"><img src="https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?w=400&q=80" alt="Cosmetic Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Cosmetic & makeup bags</h3><p>Zipper pouches & vanity bags — top seller in ladies accessories.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Ladies top pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Cosmetic%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f8f0,#90d8b8)"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&q=80" alt="Perfume" loading="lazy"></div>
+      <div class="pbody"><h3>Pocket perfumes & deodorants</h3><p>Imported & desi attar style perfumes — gifting & retail favourite.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Gift favourite</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Perfumes%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5e8e8,#e8b0a0)"><img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=400&q=80" alt="Masks" loading="lazy"></div>
+      <div class="pbody"><h3>Printed face masks & neck gaiters</h3><p>Trendy cotton masks & neck gaiters in bulk. Multi-pack packing.</p>
+        <div class="pfoot"><span class="pbadge pb-coral">Multi-pack</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Face%20Masks%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8ecf8,#b0bce8)"><img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=400&q=80" alt="Passport Holder" loading="lazy"></div>
+      <div class="pbody"><h3>Passport holders & card wallets</h3><p>Travel accessories — leather-look, RFID-safe card holders.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Travel pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Passport%20Holders%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f0e8,#e8c888)"><img src="https://images.unsplash.com/photo-1610824352934-c10d87b700cc?w=400&q=80" alt="Sunscreen" loading="lazy"></div>
+      <div class="pbody"><h3>Cooling towels & sports accessories</h3><p>Ice towels, sweatbands & gym accessories — growing category.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Growing</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Sports%20Accessories%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef5e8,#b8d8a0)"><img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400&q=80" alt="Eye Glasses" loading="lazy"></div>
+      <div class="pbody"><h3>Reading & blue-light glasses</h3><p>Zero-power & +1 to +3 reading specs — huge demand in 35+ age group.</p>
+        <div class="pfoot"><span class="pbadge pb-green">35+ demand</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Reading%20Glasses%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5eef8,#c8b0e8)"><img src="https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=400&q=80" alt="Trolley Cover" loading="lazy"></div>
+      <div class="pbody"><h3>Luggage straps & bag covers</h3><p>TSA straps, elastic bag covers — travel accessories with rising demand.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Travel</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Luggage%20Straps%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#fde8f0,#f8a8c8)"><img src="https://images.unsplash.com/photo-1596401157584-8607e7e50acd?w=400&q=80" alt="Nail Art" loading="lazy"></div>
+      <div class="pbody"><h3>Nail art & beauty accessories</h3><p>Press-on nails, nail art kits, false lashes — salon & retail segment.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Salon pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Nail%20Art%20Accessories%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f8fc,#90d0e8)"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&q=80" alt="Mirror" loading="lazy"></div>
+      <div class="pbody"><h3>Pocket mirrors & compact mirrors</h3><p>Decorative & plain pocket mirrors — ladies accessories staple.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Ladies staple</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Pocket%20Mirrors%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f4e8,#e8d890)"><img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=400&q=80" alt="Shoe Accessories" loading="lazy"></div>
+      <div class="pbody"><h3>Shoe care & accessories</h3><p>Insoles, shoelaces & care kits — footwear complementary product.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Add-on sell</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Shoe%20Accessories%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef0f8,#b0b8e8)"><img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&q=80" alt="Earphones" loading="lazy"></div>
+      <div class="pbody"><h3>Earphones & cable accessories</h3><p>Wired earphones & USB cables — budget segment, very high volume.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">High volume</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Earphones%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="accessories">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8fce8,#a0e0a0)"><img src="https://images.unsplash.com/photo-1564466809058-bf4114d55352?w=400&q=80" alt="Sports Bag Accessories" loading="lazy"></div>
+      <div class="pbody"><h3>Gym & sports accessories kit</h3><p>Skipping ropes, resistance bands, gym gloves — trending fitness picks.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Fitness trend</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Gym%20Accessories%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <!-- ===== 20 MORE BAGS ===== -->
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f0e8,#e8c8a0)"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80" alt="Sling Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Sling bags — men & women</h3><p>Crossbody sling bags — casual, college & travel use. All sizes available.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">College pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Sling%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f0f8,#a0c4e8)"><img src="https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?w=400&q=80" alt="Gym Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Gym & duffel bags</h3><p>Sports & gym duffel bags — large capacity, lightweight, unisex designs.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Unisex</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Gym%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5e8f8,#d8a8e8)"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Ethnic Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Ethnic & embroidered bags</h3><p>Rajasthani, mirror-work & embroidered bags — festive & ethnic wear.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Festive hit</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Ethnic%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef8e8,#b0d8a0)"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80" alt="Canvas Tote" loading="lazy"></div>
+      <div class="pbody"><h3>Canvas & jute tote bags</h3><p>Eco-friendly totes — gifting, grocery & promotional use. Bulk discount.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Eco-friendly</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Canvas%20Tote%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8e8e8,#e8b0b0)"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80" alt="Kids School Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Kids school bags</h3><p>Cartoon-printed & colourful school bags for kids age 3–12. Fast selling.</p>
+        <div class="pfoot"><span class="pbadge pb-coral">School season</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Kids%20School%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f8f8,#88d8d8)"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80" alt="Laptop Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Laptop bags & sleeves</h3><p>13–15.6 inch padded sleeves & shoulder bags — office & student segment.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Office pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Laptop%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f5e8,#e8d898)"><img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?w=400&q=80" alt="Travel Pouch" loading="lazy"></div>
+      <div class="pbody"><h3>Travel pouches & organiser bags</h3><p>Multi-pocket travel organisers — toiletry, cable & document bags.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Travel must</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Travel%20Pouches%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5e8f5,#d8a8d8)"><img src="https://images.unsplash.com/photo-1566150905458-1bf1ac880913?w=400&q=80" alt="Party Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Party & evening bags</h3><p>Sequin, glitter & metallic evening bags — weddings & parties.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Wedding pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Party%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8eef8,#a8b8e8)"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80" alt="Waterproof Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Waterproof dry bags</h3><p>Trekking, beach & outdoor bags — seasonal but high-margin category.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Outdoor</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Waterproof%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8ece8,#e8c0a8)"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&q=80" alt="Office Briefcase" loading="lazy"></div>
+      <div class="pbody"><h3>Office briefcases & portfolios</h3><p>Formal leather-look briefcases & document folders for professionals.</p>
+        <div class="pfoot"><span class="pbadge pb-coral">Corporate</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Briefcases%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef8ee,#a8d8a8)"><img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=400&q=80" alt="Cabin Bags" loading="lazy"></div>
+      <div class="pbody"><h3>Cabin luggage bags</h3><p>20–22 inch cabin-size trolleys — airline-approved, lightweight designs.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Airline approved</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Cabin%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5f0f8,#c8b8e8)"><img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=400&q=80" alt="Drawstring Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Drawstring & gym sack bags</h3><p>Lightweight nylon drawstring bags — sports, school & promotional use.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Promo use</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Drawstring%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef8e8,#fce8a0)"><img src="https://images.unsplash.com/photo-1614179818511-5851a25a4862?w=400&q=80" alt="Potli Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Potli bags & favour bags</h3><p>Wedding favour, dry fruit & gift potli bags — festive season essential.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Wedding must</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Potli%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f4f8,#a8d4e8)"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80" alt="Anti-theft Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Anti-theft & security bags</h3><p>RFID-protected, lockable zippers — premium segment, growing demand.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Premium</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Anti-theft%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8e8f0,#e8a8c8)"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80" alt="Mini Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Mini & micro handbags</h3><p>Trending mini bags for ladies — social media viral style category.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Viral trend</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Mini%20Handbags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef8f0,#a8d8b8)"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&q=80" alt="Coin Purse" loading="lazy"></div>
+      <div class="pbody"><h3>Coin purses & zip pouches</h3><p>Small zipper pouches & coin wallets — low MOQ, high repeat orders.</p>
+        <div class="pfoot"><span class="pbadge pb-green">High repeat</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Coin%20Purses%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f0f0f8,#c0c0e0)"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80" alt="Shopping Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Reusable shopping bags</h3><p>Foldable, laminated & grocery bags — retail shops, supermarkets.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Retail staple</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Shopping%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f4e8,#e8d880)"><img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=400&q=80" alt="Shoe Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Shoe bags & dustbags</h3><p>Non-woven & fabric shoe bags — travel & footwear store accessory.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Footwear add-on</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Shoe%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="bags">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8e8e0,#e8c0a0)"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Woven Bag" loading="lazy"></div>
+      <div class="pbody"><h3>Woven & crochet bags</h3><p>Handwoven & crochet-style bags — boho, beach & summer fashion.</p>
+        <div class="pfoot"><span class="pbadge pb-coral">Summer trend</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Woven%20Bags%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <!-- ===== 30 BABY ITEMS ===== -->
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef0f8,#fcc8e8)"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Baby Clothes" loading="lazy"></div>
+      <div class="pbody"><h3>Baby rompers & onesies</h3><p>Soft cotton rompers for 0–24 months — gifting & baby shower staple.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Baby shower</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Rompers%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f4f8,#a8d0e8)"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80" alt="Baby Blanket" loading="lazy"></div>
+      <div class="pbody"><h3>Baby blankets & swaddles</h3><p>Muslin & fleece swaddle wraps — must-have newborn essentials.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Newborn must</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Blankets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef8e0,#fce890)"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" alt="Baby Feeding" loading="lazy"></div>
+      <div class="pbody"><h3>Baby feeding bottles & sets</h3><p>BPA-free feeding bottles, sippy cups & accessories. High parent demand.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Parent trust</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Feeding%20Bottles%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef8e8,#b0d8a0)"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80" alt="Baby Shoes" loading="lazy"></div>
+      <div class="pbody"><h3>Baby shoes & booties</h3><p>Soft-sole booties & shoes for 0–3 years. Gifting season favourite.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Gift fav</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Shoes%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fce8f0,#f8b8d0)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Baby Toys Rattle" loading="lazy"></div>
+      <div class="pbody"><h3>Rattles & teether toys</h3><p>Colourful safe rattles & BPA-free teethers for infants. Very fast moving.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Fast moving</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Rattles%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8ecf8,#a8b4e8)"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Baby Socks" loading="lazy"></div>
+      <div class="pbody"><h3>Baby socks & mittens</h3><p>Soft cotton socks & mittens — pack of 6/12 — newborn to 2 years.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Newborn</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Socks%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef4e0,#fcd890)"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80" alt="Baby Towel" loading="lazy"></div>
+      <div class="pbody"><h3>Baby towels & washcloths</h3><p>Hooded bath towels & soft washcloths — cotton muslin for delicate skin.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Soft & safe</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Towels%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#f0fce8,#c0e898)"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" alt="Baby Pacifier" loading="lazy"></div>
+      <div class="pbody"><h3>Pacifiers & soothers</h3><p>Orthodontic & standard pacifiers — 0–6 months & 6–18 months range.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Orthodontic</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Pacifiers%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fce8e8,#f8b0b0)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Baby Carrier" loading="lazy"></div>
+      <div class="pbody"><h3>Baby carriers & wraps</h3><p>Ergonomic baby carriers & stretchy wraps — new parent essential.</p>
+        <div class="pfoot"><span class="pbadge pb-coral">Parent must</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Carriers%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8eef8,#a8b8e8)"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Baby Monitor" loading="lazy"></div>
+      <div class="pbody"><h3>Baby safety & childproofing</h3><p>Corner guards, socket covers & safety gates — childroof home kits.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Safety pick</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Safety%20Products%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef0e8,#fcd0a0)"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80" alt="Baby Bibs" loading="lazy"></div>
+      <div class="pbody"><h3>Baby bibs & feeding aprons</h3><p>Waterproof silicon & cotton bibs — weaning & feeding essentials.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Feeding must</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Bibs%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#f4e8fc,#d0a8f0)"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" alt="Baby Bath" loading="lazy"></div>
+      <div class="pbody"><h3>Baby bath tubs & bath seats</h3><p>Foldable & anti-slip baby bath tubs — space-saving modern designs.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Space saving</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Bath%20Tubs%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef8f0,#a0d8b0)"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Baby Hair Band" loading="lazy"></div>
+      <div class="pbody"><h3>Baby hair bands & clips</h3><p>Soft elastic headbands & tiny clips for girls — newborn to 5 years.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Girls fav</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Hair%20Bands%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fde8f4,#f8a8d0)"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80" alt="Baby Pillow" loading="lazy"></div>
+      <div class="pbody"><h3>Baby pillows & cushions</h3><p>Head-shaping & anti-flat-head memory foam pillows — gifting staple.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Gifting staple</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Pillows%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f4e8,#a0d0a0)"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" alt="Baby Spoon" loading="lazy"></div>
+      <div class="pbody"><h3>Baby spoons & feeding sets</h3><p>Soft silicone spoons, training cutlery sets — weaning & solid food.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Weaning set</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Feeding%20Sets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f0e8,#e8d0a8)"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Baby Gym Mat" loading="lazy"></div>
+      <div class="pbody"><h3>Baby play gyms & activity mats</h3><p>Padded play mats with hanging toys — tummy time & sensory play.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Sensory play</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Play%20Mats%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#f0e8f8,#c8a8e8)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Baby Musical Toy" loading="lazy"></div>
+      <div class="pbody"><h3>Musical & light-up toys</h3><p>Battery-operated musical plush & light toys — 6–24 months segment.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">6–24 months</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Musical%20Toys%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8fcf0,#90e8b8)"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80" alt="Baby Mosquito Net" loading="lazy"></div>
+      <div class="pbody"><h3>Baby mosquito nets & bed guards</h3><p>Foldable nets & crib guards — summer essential across all regions.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Summer must</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Mosquito%20Nets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fce8ec,#f8a8b8)"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" alt="Baby Dresser" loading="lazy"></div>
+      <div class="pbody"><h3>Baby grooming & care kits</h3><p>Nail clippers, comb, brush & thermometer combo sets — gifting must.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Gift combo</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Grooming%20Kits%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f0fc,#a8c0f0)"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Baby Walker" loading="lazy"></div>
+      <div class="pbody"><h3>Baby walkers & push toys</h3><p>Activity walkers & ride-on push toys — 9–24 months, gifting season.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Walk stage</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Walkers%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef8f0,#fce8c0)"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80" alt="Baby Cradle" loading="lazy"></div>
+      <div class="pbody"><h3>Baby cradle & swing covers</h3><p>Jhula / cradle covers & canopy sets — traditional & modern styles.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Traditional</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Cradle%20Covers%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef8ee,#a8d8a8)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Baby Blocks" loading="lazy"></div>
+      <div class="pbody"><h3>Building blocks & stacking toys</h3><p>Soft foam & wooden stacking blocks — early learning & gifting.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Early learning</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Blocks%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8e8f4,#e8b0d8)"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Baby Dress" loading="lazy"></div>
+      <div class="pbody"><h3>Baby frocks & party dresses</h3><p>Embroidered & lace frocks for girls — birthday & function wear.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Party wear</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Frocks%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f4f8,#a0c8e0)"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80" alt="Baby Nappy" loading="lazy"></div>
+      <div class="pbody"><h3>Baby nappy changing mats</h3><p>Waterproof portable changing mats & pad covers — travel & home use.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Travel & home</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Changing%20Mats%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef0f8,#fcc8e0)"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" alt="Baby Gift Set" loading="lazy"></div>
+      <div class="pbody"><h3>Baby gift hampers & combo sets</h3><p>Ready-to-gift hampers with essentials — hospital & baby shower packs.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Gift ready</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Gift%20Hampers%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#f0fce8,#c0e890)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Baby Stroller" loading="lazy"></div>
+      <div class="pbody"><h3>Pram & stroller accessories</h3><p>Stroller organisers, covers & rain shields — pram accessory bundle.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Pram add-on</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Stroller%20Accessories%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="baby">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f4e0,#f0e088)"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Baby Night Light" loading="lazy"></div>
+      <div class="pbody"><h3>Baby night lights & projectors</h3><p>Star projector & touch LED night lamps — nursery & sleep aid.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Sleep aid</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Baby%20Night%20Lights%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <!-- ===== 20 JEWELLERY ITEMS ===== -->
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef0e8,#f8c890)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Gold Earrings" loading="lazy"></div>
+      <div class="pbody"><h3>Gold-plated earrings</h3><p>Jhumkas, hoops & stud earrings — gold-plated & anti-tarnish finish.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Best seller</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Gold%20Plated%20Earrings%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5e8fc,#d8a8f0)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Necklace Set" loading="lazy"></div>
+      <div class="pbody"><h3>Necklace & pendant sets</h3><p>Kundan, meenakari & long-chain necklaces — ethnic & Western styles.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Ethnic & Western</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Necklace%20Sets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#fce8f0,#f0a8c8)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Bangles" loading="lazy"></div>
+      <div class="pbody"><h3>Bangles & kadas</h3><p>Glass, metal & lac bangles — all sizes, wedding & daily wear.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Wedding wear</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Bangles%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f4f8,#a8d0e8)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Anklets" loading="lazy"></div>
+      <div class="pbody"><h3>Anklets & payal</h3><p>Silver-look & gold-look anklets — ethnic & casual wear, all age groups.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Ethnic fav</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Anklets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f0e0,#e8d090)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Maang Tikka" loading="lazy"></div>
+      <div class="pbody"><h3>Maang tikka & matha patti</h3><p>Bridal & festive forehead jewellery — wedding season high demand.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Bridal</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Maang%20Tikka%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#eef0f8,#b0b8e8)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Bracelets" loading="lazy"></div>
+      <div class="pbody"><h3>Bracelets & charm bands</h3><p>Beaded, thread & metal bracelets — gifting & daily fashion.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Daily fashion</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Bracelets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8ece8,#f0c0a8)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Nose Pin" loading="lazy"></div>
+      <div class="pbody"><h3>Nose pins & nose rings</h3><p>Stud & ring-style nose pins — gold & silver look, huge demand.</p>
+        <div class="pfoot"><span class="pbadge pb-coral">Huge demand</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Nose%20Pins%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f4e8fc,#c8a0e8)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Bridal Set" loading="lazy"></div>
+      <div class="pbody"><h3>Bridal jewellery sets</h3><p>Full bridal sets — necklace, earrings, tikka, bangles & nose pin combo.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">Bridal combo</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Bridal%20Jewellery%20Sets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef8e8,#fce890)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Oxidised Jewellery" loading="lazy"></div>
+      <div class="pbody"><h3>Oxidised silver jewellery</h3><p>Tribal, boho & oxidised sets — earrings, necklace & bracelet bundles.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Boho trend</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Oxidised%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f4e8,#98d898)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Pearl Jewellery" loading="lazy"></div>
+      <div class="pbody"><h3>Pearl & shell jewellery</h3><p>Imitation pearl necklaces, earrings & sets — bridal & office wear.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Elegant look</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Pearl%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#fce8ec,#f8a8b8)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Kundan Set" loading="lazy"></div>
+      <div class="pbody"><h3>Kundan & polki sets</h3><p>Traditional Kundan sets — earrings, necklace & maang tikka combos.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Traditional</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Kundan%20Sets%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8ecfc,#a8b4f8)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Rings" loading="lazy"></div>
+      <div class="pbody"><h3>Finger rings & toe rings</h3><p>Adjustable & fixed size rings — gold-look, silver & stone-set options.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">All sizes</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Rings%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f4e8,#e8d880)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Temple Jewellery" loading="lazy"></div>
+      <div class="pbody"><h3>Temple & south Indian jewellery</h3><p>Gold-coated temple jewellery — Bharatanatyam & south Indian bridal.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">South India</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Temple%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f0e8f8,#c0a0e8)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Beaded Jewellery" loading="lazy"></div>
+      <div class="pbody"><h3>Beaded & thread jewellery</h3><p>Colourful bead necklaces, earrings & sets — kids & college segment.</p>
+        <div class="pfoot"><span class="pbadge pb-purple">College trend</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Beaded%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#fce8e0,#f8c0a0)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Choker Necklace" loading="lazy"></div>
+      <div class="pbody"><h3>Choker necklaces</h3><p>Velvet, metal & beaded chokers — trending fashion jewellery.</p>
+        <div class="pfoot"><span class="pbadge pb-coral">Trending</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Choker%20Necklaces%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8f8f0,#90d8b0)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Couple Bracelet" loading="lazy"></div>
+      <div class="pbody"><h3>Couple & friendship bands</h3><p>Matching couple bands & friendship bracelets — gifting bestseller.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Gifting hit</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Couple%20Bands%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#fef0f4,#fcc0d0)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Meenakari Jewellery" loading="lazy"></div>
+      <div class="pbody"><h3>Meenakari & enamel jewellery</h3><p>Colourful enamel painted sets — Rajasthani & festive style.</p>
+        <div class="pfoot"><span class="pbadge pb-pink">Festive style</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Meenakari%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#e8ecf8,#a8b0e0)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Men Jewellery" loading="lazy"></div>
+      <div class="pbody"><h3>Men's jewellery & chains</h3><p>Black thread bracelets, metal chains & rings for men — fast growing.</p>
+        <div class="pfoot"><span class="pbadge pb-blue">Men's segment</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Mens%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f8f0e8,#e8d0a0)"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Kemp Jewellery" loading="lazy"></div>
+      <div class="pbody"><h3>Kemp & stone jewellery</h3><p>Red & green stone-set kemp jewellery — south Indian & Punjabi bridal.</p>
+        <div class="pfoot"><span class="pbadge pb-amber">Bridal special</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Kemp%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+    <div class="pcard" data-cat="fashion">
+      <div class="pimg" style="background:linear-gradient(135deg,#f4f8e0,#d8e890)"><img src="https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=80" alt="Hair Jewellery" loading="lazy"></div>
+      <div class="pbody"><h3>Hair jewellery & jhoomar</h3><p>Passa, jhoomar & bridal hair accessories — wedding season special.</p>
+        <div class="pfoot"><span class="pbadge pb-green">Wedding season</span><a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20order%20Hair%20Jewellery%20in%20bulk." class="parrow" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DESIGNS -->
+<section id="designs">
+  <div class="designs-header">
+    <div class="sec-tag" style="justify-content:center">Multiple designs</div>
+    <h2 class="sec-title">Available in dozens of styles & colours</h2>
+    <p class="sec-sub">Each product category comes in multiple designs, colours & variants. WhatsApp us for the full design catalogue.</p>
+  </div>
+  <div class="designs-grid">
+    <div class="dcard"><div class="dcard-bg d1" style="background:none"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80" style="width:100%;height:100%;object-fit:cover" alt="Classic black belts"></div><div class="dcard-label"><h4>Classic black belts</h4><p>Men's formal range</p></div></div>
+    <div class="dcard"><div class="dcard-bg d2" style="background:none"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80&sat=-50" style="width:100%;height:100%;object-fit:cover;filter:sepia(0.6) saturate(1.5)" alt="Brown leather belts"></div><div class="dcard-label"><h4>Brown leather belts</h4><p>Casual & formal</p></div></div>
+    <div class="dcard"><div class="dcard-bg d3" style="background:none"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&q=80" style="width:100%;height:100%;object-fit:cover" alt="Emerald purses"></div><div class="dcard-label"><h4>Emerald purses</h4><p>Ladies collection</p></div></div>
+    <div class="dcard"><div class="dcard-bg d4" style="background:none"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&q=80" style="width:100%;height:100%;object-fit:cover" alt="Aviator sunglasses"></div><div class="dcard-label"><h4>Aviator sunglasses</h4><p>UV400 protection</p></div></div>
+    <div class="dcard"><div class="dcard-bg d5" style="background:none"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" style="width:100%;height:100%;object-fit:cover" alt="Oxidised jewellery"></div><div class="dcard-label"><h4>Oxidised jewellery</h4><p>Ethnic & boho sets</p></div></div>
+    <div class="dcard"><div class="dcard-bg d6" style="background:none"><img src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=400&q=80" style="width:100%;height:100%;object-fit:cover" alt="Printed scarves"></div><div class="dcard-label"><h4>Printed scarves</h4><p>Floral & geometric</p></div></div>
+    <div class="dcard"><div class="dcard-bg d7" style="background:none"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80" style="width:100%;height:100%;object-fit:cover" alt="Tan tote bags"></div><div class="dcard-label"><h4>Tan tote bags</h4><p>Office & casual</p></div></div>
+    <div class="dcard"><div class="dcard-bg d8" style="background:none"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80" style="width:100%;height:100%;object-fit:cover" alt="Travel backpacks"></div><div class="dcard-label"><h4>Travel backpacks</h4><p>Multi-pocket design</p></div></div>
+  </div>
+  <div style="text-align:center;margin-top:28px">
+    <a href="https://wa.me/917368072529?text=Hi!%20Please%20send%20me%20your%20complete%20design%20catalogue%20with%20all%20variants." class="btn-wa" target="_blank" style="display:inline-flex">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      View full design catalogue on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section class="cat-section" id="catalogue">
+  <div class="cat-grid">
+    <div>
+      <div class="sec-tag">Catalogue & ordering</div>
+      <h2 class="sec-title">Get our latest catalogue instantly</h2>
+      <p class="sec-sub">WhatsApp us directly for the latest product catalogue, pricing list, or to place a bulk order — we respond fast.</p>
+      <div class="cat-options">
+        <a href="https://wa.me/917368072529?text=Hi!%20Please%20send%20me%20your%20latest%20product%20catalogue." class="cat-btn" target="_blank">
+          <div class="cico">📋</div>
+          <h4>Full catalogue</h4>
+          <p>All products & designs</p>
+          <div class="carr">→</div>
+        </a>
+        <a href="https://wa.me/917368072529?text=Hi!%20Please%20send%20me%20your%20wholesale%20price%20list." class="cat-btn" target="_blank">
+          <div class="cico">💰</div>
+          <h4>Price list</h4>
+          <p>Bulk & wholesale rates</p>
+          <div class="carr">→</div>
+        </a>
+        <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20place%20a%20bulk%20order.%20Please%20guide%20me." class="cat-btn" target="_blank">
+          <div class="cico">📦</div>
+          <h4>Place bulk order</h4>
+          <p>Minimum order applies</p>
+          <div class="carr">→</div>
+        </a>
+        <a href="https://wa.me/917368072529?text=Hi!%20I%20have%20a%20query%20about%20your%20products." class="cat-btn" target="_blank">
+          <div class="cico">💬</div>
+          <h4>Ask a query</h4>
+          <p>We reply within hours</p>
+          <div class="carr">→</div>
+        </a>
+      </div>
+    </div>
+    <div class="cat-visual">
+      <h3>WhatsApp us now</h3>
+      <p>The fastest way to get our catalogue, check availability & place your order — all on WhatsApp.</p>
+      <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20know%20more%20about%20your%20wholesale%20accessories." class="cat-wa-btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="#1D9E75"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +91 7368072529
+      </a>
+      <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:14px">Available Mon–Sat, 9am–7pm IST</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <div class="sec-tag">Why choose us</div>
+      <h2 class="sec-title">The wholesale partner your business deserves</h2>
+      <p class="sec-sub">We make it easy to restock, resell, and grow — without the hassle.</p>
+      <div class="why-items">
+        <div class="witem">
+          <div class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <div><h4>Competitive bulk pricing</h4><p>Flexible MOQs and tiered pricing so your margins stay healthy at every order size.</p></div>
+        </div>
+        <div class="witem">
+          <div class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <div><h4>Fast & reliable shipping</h4><p>Orders dispatched within 48 hours. Pan-India delivery with tracking on every shipment.</p></div>
+        </div>
+        <div class="witem">
+          <div class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <div><h4>Always on trend</h4><p>New styles added regularly. Catalogue updated weekly so your store always has fresh stock.</p></div>
+        </div>
+        <div class="witem">
+          <div class="wicon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div><h4>WhatsApp support</h4><p>Order, query & catalogue — all on WhatsApp. Fastest response in the business.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <h3>Our numbers</h3>
+      <div class="metrics">
+        <div class="mbox"><div class="num">500+</div><div class="lbl">Active sellers</div></div>
+        <div class="mbox"><div class="num">30+</div><div class="lbl">Categories</div></div>
+        <div class="mbox"><div class="num">48h</div><div class="lbl">Avg dispatch</div></div>
+        <div class="mbox"><div class="num">98%</div><div class="lbl">On-time delivery</div></div>
+      </div>
+      <div class="wa-promo">
+        <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <p>Message us on <a href="https://wa.me/917368072529" target="_blank">+91 7368072529</a> for pricing, catalogue & bulk orders — we reply fast!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTAs -->
+<section style="background:var(--paperm)" id="offers">
+  <div class="ctas-header">
+    <div class="sec-tag" style="justify-content:center">Exclusive offers</div>
+    <h2 class="sec-title">Ready to grow your store?</h2>
+    <p class="sec-sub" style="margin:0 auto">Pick the offer that works for you — tap to connect on WhatsApp instantly.</p>
+  </div>
+  <div class="cta-cards" style="margin-top:40px">
+    <div class="ctacard urgency">
+      <div class="ctalabel">Limited time</div>
+      <p>Stock is limited — place your bulk order today and get priority dispatch.</p>
+      <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20place%20a%20bulk%20order%20urgently%20for%20priority%20dispatch." class="cta-wa" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order now
+      </a>
+    </div>
+    <div class="ctacard trust">
+      <div class="ctalabel">Trusted seller</div>
+      <p>Join hundreds of sellers who trust us for quality stock and on-time delivery.</p>
+      <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20start%20ordering%20from%20you%20for%20my%20store." class="cta-wa" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Join us
+      </a>
+    </div>
+    <div class="ctacard offer">
+      <div class="ctalabel">First order</div>
+      <p>First order? Ask us about our introductory wholesale rates for new buyers.</p>
+      <a href="https://wa.me/917368072529?text=Hi!%20This%20is%20my%20first%20order.%20Please%20share%20introductory%20wholesale%20rates." class="cta-wa" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Ask about rates
+      </a>
+    </div>
+    <div class="ctacard soft">
+      <div class="ctalabel">Have questions?</div>
+      <p>Have questions? Drop us a message — we'll reply fast and help you find the right products.</p>
+      <a href="https://wa.me/917368072529?text=Hi!%20I%20have%20a%20question%20about%20your%20products." class="cta-wa" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Message us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="sec-tag">Get in touch</div>
+      <h2 class="sec-title">Let's talk wholesale</h2>
+      <p class="sec-sub">Reach out via WhatsApp or fill the form and we'll get back to you with our latest catalogue, pricing & availability.</p>
+      <div class="contact-ways">
+        <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20know%20more%20about%20your%20wholesale%20accessories." class="cway" target="_blank">
+          <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <div class="cway-text"><h4>WhatsApp</h4><p>+91 7368072529 — fastest response</p></div>
+        </a>
+        <a href="tel:+917368072529" class="cway">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6z"/></svg>
+          <div class="cway-text"><h4>Phone call</h4><p>+91 7368072529</p></div>
+        </a>
+        <div class="cway">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="cway-text"><h4>Our location</h4><p>Islampur, Muzaffarpur, Bihar 842001</p></div>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="fg"><label>Your name</label><input type="text" placeholder="Rahul Sharma" required></div>
+        <div class="fg"><label>WhatsApp number</label><input type="tel" placeholder="+91 98XXX XXXXX" required></div>
+      </div>
+      <div class="fg">
+        <label>Business type</label>
+        <select><option value="">Select your business</option><option>Retail shop / boutique</option><option>Online seller (Meesho, Flipkart, Amazon)</option><option>Wholesale distributor</option><option>Other</option></select>
+      </div>
+      <div class="fg">
+        <label>Products interested in</label>
+        <select><option value="">Select a category</option><option>Belts</option><option>Wallets & purses</option><option>Baby products</option><option>Trolley bags</option><option>Sunglasses</option><option>Jewellery</option><option>Scarves & hair accessories</option><option>Handbags & backpacks</option><option>Clutches & potlis</option><option>Flip flops & slippers</option><option>Ladies sandals & heels</option><option>Kitchen storage & containers</option><option>Water bottles & flasks</option><option>Soft toys & stuffed animals</option><option>Stationery & gift sets</option><option>Fashion watches</option><option>Caps & hats</option><option>All categories</option></select>
+      </div>
+      <div class="fg"><label>Message (optional)</label><textarea rows="3" placeholder="Tell us about your order size or requirements..."></textarea></div>
+      <div class="form-actions">
+        <button type="submit" class="fsub" id="fsub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send enquiry
+        </button>
+        <a href="https://wa.me/917368072529?text=Hi!%20I%20want%20to%20enquire%20about%20wholesale%20accessories." class="fwa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <p class="form-note" id="fnote">We typically respond within a few hours on business days.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">Azadbelt <span>Store</span></div>
+  <span class="fmid">Azadbelt Store — Islampur, Muzaffarpur, Bihar 842001 · © 2025</span>
+  <a href="https://wa.me/917368072529" class="fwa-link" target="_blank">
+    <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    +91 7368072529
+  </a>
+</footer>
+
+<script>
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pcard').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('fsub');
+  const note = document.getElementById('fnote');
+  btn.textContent = 'Enquiry sent!';
+  btn.style.background = '#0F6E56';
+  note.textContent = 'Thank you! We will get back to you shortly on WhatsApp.';
+  note.style.color = '#9FE1CB';
+  setTimeout(() => {
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send enquiry';
+    btn.style.background = '';
+    note.textContent = 'We typically respond within a few hours on business days.';
+    note.style.color = '';
+  }, 4000);
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+</body>
+</html>
